@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
 import Hooks from "./components/Hooks";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const AppLayout = () => (
   <div>
@@ -35,9 +37,11 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={appRouter} />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <RouterProvider router={appRouter} />
+      </div>
+    </Provider>
   );
 }
 
