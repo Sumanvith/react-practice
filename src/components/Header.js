@@ -21,6 +21,16 @@ const Header = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link className="mx-4" to="Practice1">
+              Practice1
+            </Link>
+          </li>
+          <li>
+            <Link className="mx-4" to="SignUp">
+              Sign Up
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

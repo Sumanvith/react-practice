@@ -6,6 +6,8 @@ import Contact from "./components/Contact";
 import Hooks from "./components/Hooks";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import Practice1 from "./components/Practice1";
+import SignUp from "./components/SignUp";
 
 const AppLayout = () => (
   <div>
@@ -30,6 +32,14 @@ const appRouter = createBrowserRouter([
       {
         path: "hooks",
         element: <Hooks />,
+      },
+      {
+        path: "practice1",
+        element: <Practice1 />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
       },
     ],
   },
