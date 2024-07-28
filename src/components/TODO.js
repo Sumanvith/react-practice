@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../utils/todoSlice";
+import { addItem, removeItem } from "../utils/todoSlice";
 
 const TODO = () => {
   const [input, setInput] = useState();
@@ -8,6 +8,10 @@ const TODO = () => {
   const todos = useSelector((state) => state.todo);
   const handleAdd = () => {
     if (!todos.includes(input)) dispatch(addItem(input));
+    setInput("");
+  };
+  const handleRemove = (item) => {
+    dispatch(removeItem(item));
   };
   return (
     <div className="bg-[#EEE] h-screen w-screen">
@@ -28,7 +32,16 @@ const TODO = () => {
         </div>
         <div className="m-5 flex flex-col items-center">
           {todos.map((todo, index) => (
-            <p>{todo}</p>
+            <div
+              key={index}
+              className="box-border flex items-center justify-between p-5 m-2 h-10 w-1/2 border border-green-800 rounded-2xl hover:bg-green-200">
+              {todo}
+              <button
+                onClick={() => handleRemove(todo)}
+                className="box-border border border-red-800 rounded-full px-2 hover:bg-red-600">
+                Remove
+              </button>
+            </div>
           ))}
         </div>
       </div>

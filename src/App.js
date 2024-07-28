@@ -10,7 +10,7 @@ import TODO from "./components/TODO";
 import SignUp from "./components/SignUp";
 
 const AppLayout = () => (
-  <div>
+  <div className="font-quicksand">
     <Header />
     <Outlet /> {/* This will render the children routes */}
   </div>
