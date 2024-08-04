@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import store from "./utils/store";
 import TODO from "./components/TODO";
 import SignUp from "./components/SignUp";
+import ObjectInfo from "./components/ObjectInfo";
+import Params from "./components/Params";
 
 const AppLayout = () => (
   <div className="font-quicksand">
@@ -40,6 +42,14 @@ const appRouter = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp />,
+      },
+      {
+        path: "/rockstarGames/",
+        element: <Params></Params>,
+      },
+      {
+        path: "/rockstarGames/:rgId",
+        element: <ObjectInfo></ObjectInfo>,
       },
     ],
   },

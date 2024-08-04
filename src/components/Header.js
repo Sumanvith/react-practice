@@ -48,6 +48,17 @@ const Header = () => {
           <li>
             <Link
               className={`mx-4 ${
+                isActive("/rockstarGames")
+                  ? "bg-cyan-200"
+                  : "hover:text-red-500"
+              }`}
+              to="/rockstarGames">
+              Rockstar Games
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`mx-4 ${
                 isActive("/SignUp") ? "bg-cyan-200" : "hover:text-red-500"
               }`}
               to="/SignUp">
